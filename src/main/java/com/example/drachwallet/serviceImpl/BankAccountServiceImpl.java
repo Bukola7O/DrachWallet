@@ -53,7 +53,6 @@ public class BankAccountServiceImpl implements BankAccountService {
     }
 
 
-    /*---------------------------------------   Remove Customer Bank Account  ----------------------------------------*/
     @Override
     public Wallet removeBankAccount(String key, BankAccountDTO bankAccountDTO) throws BankAccountException, CustomerException{
 

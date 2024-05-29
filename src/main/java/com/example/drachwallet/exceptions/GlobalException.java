@@ -19,7 +19,6 @@ public class GlobalException {
 
     }
 
-    /* --------------------------------------   BankAccount Exception    ----------------------------------------------*/
 
     @ExceptionHandler(BankAccountException.class)
     public ResponseEntity<ErrorMessage> DrachwalletExceptionHandler(BankAccountException bankAccountException, WebRequest request){
@@ -30,7 +29,6 @@ public class GlobalException {
     }
 
 
-    /* --------------------------------------   Beneficiary Exception    ----------------------------------------------*/
 
     @ExceptionHandler(BeneficiaryException.class)
     public ResponseEntity<ErrorMessage> DrachwalletExceptionHandler(BeneficiaryException beneficiaryException , WebRequest request){
@@ -41,7 +39,6 @@ public class GlobalException {
     }
 
 
-    /* --------------------------------------   BillPayment Exception    ----------------------------------------------*/
 
     @ExceptionHandler(PaymentException.class)
     public ResponseEntity<ErrorMessage> DrachwalletExceptionHandler(PaymentException PaymentException, WebRequest request){
@@ -52,8 +49,6 @@ public class GlobalException {
     }
 
 
-    /* --------------------------------------   Customer Exception    ----------------------------------------------*/
-
     @ExceptionHandler(CustomerException.class)
     public ResponseEntity<ErrorMessage> DrachwalletExceptionHandler(CustomerException customerException, WebRequest request){
 
@@ -62,7 +57,6 @@ public class GlobalException {
         return new ResponseEntity<ErrorMessage>(errorMessage, HttpStatus.BAD_REQUEST);
     }
 
-    /* --------------------------------------   BankAccount Exception    ----------------------------------------------*/
 
     @ExceptionHandler(TransactionException.class)
     public ResponseEntity<ErrorMessage> DrachwalletExceptionHandler(TransactionException transactionException, WebRequest request){
@@ -73,7 +67,6 @@ public class GlobalException {
     }
 
 
-    /* --------------------------------------   Wallet Exception    ----------------------------------------------*/
 
     @ExceptionHandler(WalletException.class)
     public ResponseEntity<ErrorMessage> DrachwalletExceptionHandler(WalletException walletException, WebRequest request){
@@ -83,8 +76,6 @@ public class GlobalException {
         return new ResponseEntity<ErrorMessage>(errorMessage, HttpStatus.BAD_REQUEST);
     }
 
-
-    /* --------------------------------------   Exception    ----------------------------------------------*/
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorMessage> DrachwalletExceptionHandler(Exception exception, WebRequest request){

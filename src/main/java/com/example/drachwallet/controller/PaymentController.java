@@ -20,7 +20,6 @@ public class PaymentController {
     private PaymentService paymentService;
 
 
-    /*--------------------------------------------   Add Bill Payment Mapping -------------------------------------------------*/
     @PostMapping("/addBillPayment")
     public ResponseEntity<String> addPayment(@RequestParam("targetMobile") String targetMobile, @RequestParam("Name") String Name, @RequestParam("amount") double amount, @RequestParam("BillType") String BillType, @RequestParam("key") String key) throws PaymentException, WalletException, CustomerException, TransactionException {
 

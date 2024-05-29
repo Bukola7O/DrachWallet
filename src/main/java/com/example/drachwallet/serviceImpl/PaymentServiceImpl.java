@@ -25,7 +25,7 @@ public class PaymentServiceImpl implements PaymentService {
     public String addPayment(String targetMobile, String Name, double amount, String BillType, LocalDate paymentDate, Integer walletId, String key) throws PaymentException, WalletException, CustomerException, TransactionException {
         BigDecimal value = BigDecimal.valueOf(amount);
 
-//		String str = walletService.fundTransfer(targetMobile, Name, value, key);
+//	String str = walletService.fundTransfer(targetMobile, Name, value, key);
 
         Payment billPayment = new Payment(amount, BillType, LocalDate.now());
 

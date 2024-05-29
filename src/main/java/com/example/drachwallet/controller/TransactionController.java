@@ -22,7 +22,6 @@ public class TransactionController {
     private TransactionService transactionService;
 
 
-    /*----------------------------------------   Find Transaction - wallet  ------------------------------------------*/
     @PostMapping("/wallet")
     public ResponseEntity<List<TransactionDTO>> viewByWallet(@RequestParam String key) throws TransactionException, WalletException, CustomerException{
 
@@ -39,7 +38,6 @@ public class TransactionController {
     }
 
 
-    /*-----------------------------------------   Find Transaction - tId ---------------------------------------------*/
     @GetMapping("/transactionId")
     public ResponseEntity<TransactionDTO> findById(@RequestParam String key, @RequestParam Integer transactionId) throws TransactionException, CustomerException{
 
@@ -51,7 +49,6 @@ public class TransactionController {
     }
 
 
-    /*----------------------------------------   Find Transaction - Type  --------------------------------------------*/
     @GetMapping("/type")
     public ResponseEntity<List<TransactionDTO>> viewAllTransacationByType(@RequestParam String key, @RequestParam String type) throws TransactionException, CustomerException{
 
@@ -69,7 +66,6 @@ public class TransactionController {
     }
 
 
-    /*------------------------------------   View Transaction - Between 2 date ---------------------------------------*/
     @GetMapping("/between")
     public ResponseEntity<List<TransactionDTO>> viewByTwoDate(@RequestParam String key, @RequestParam("one") String one, @RequestParam("two")  String two) throws TransactionException, CustomerException{
 
@@ -89,7 +85,6 @@ public class TransactionController {
     }
 
 
-    /*-----------------------------------------   View All Transaction  ----------------------------------------------*/
     @GetMapping("/all")
     public ResponseEntity<List<TransactionDTO>>  viewAllTransactionByAdmin() throws TransactionException{
 

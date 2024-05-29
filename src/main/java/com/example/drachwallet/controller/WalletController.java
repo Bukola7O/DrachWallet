@@ -20,7 +20,6 @@ public class WalletController {
     @Autowired
     public WalletService walletService;
 
-    /*--------------------------------------------   Create Account  ------------------------------------------------*/
     @PostMapping("/createaccount")
     public ResponseEntity<Customer> createAccount(@Valid @RequestBody Customer customer) throws CustomerException {
 
@@ -28,7 +27,6 @@ public class WalletController {
     }
 
 
-    /*--------------------------------------------  view Balance  ------------------------------------------------*/
     @GetMapping("/balance")
     public ResponseEntity<BigDecimal> showBalance(@RequestParam String key, @RequestParam String mobileNumber) throws CustomerException{
 
@@ -36,7 +34,6 @@ public class WalletController {
     }
 
 
-    /*--------------------------------------------   Update Account  ------------------------------------------------*/
     @PostMapping("/updateaccount")
     public ResponseEntity<Customer> updateCustomerDetails(@Valid @RequestBody Customer customer, @RequestParam String key) throws CustomerException{
 
@@ -44,7 +41,6 @@ public class WalletController {
     }
 
 
-    /*--------------------------------------------   Deposit Money to Wallet  ------------------------------------------------*/
     @PostMapping("/deposit/wallet")
     public ResponseEntity<String> depositToWallet(@RequestParam Integer accountNo, @RequestParam BigDecimal amount, @RequestParam String key) throws BankAccountException, CustomerException, TransactionException, WalletException {
 

@@ -21,7 +21,6 @@ public class BeneficiaryController {
     BeneficiaryService beneficiaryService;
 
 
-    /*--------------------------------------------   Add Beneficiary Mapping -------------------------------------------------*/
     @PostMapping("/add")
     public ResponseEntity<Beneficiary> addBeneneficiaryMapping(@RequestBody Beneficiary beneficiary, @RequestParam String key) throws BeneficiaryException, WalletException, CustomerException {
 
@@ -30,7 +29,6 @@ public class BeneficiaryController {
     }
 
 
-    /*--------------------------------------------   View Beneficiary - walletId -------------------------------------------------*/
     @GetMapping("/view/walletId")
     public ResponseEntity<Beneficiary> getBeneneficiaryByWalletIdMapping(@RequestParam Integer walletId ,@RequestParam String key) throws BeneficiaryException, CustomerException{
 
@@ -39,7 +37,6 @@ public class BeneficiaryController {
     }
 
 
-    /*--------------------------------------------   View Beneficiary - Name -------------------------------------------------*/
     @GetMapping("/view/name")
     public ResponseEntity<Beneficiary> getBeneneficiaryByNameMapping(@RequestParam String name,@RequestParam String key) throws BeneficiaryException, CustomerException{
 
@@ -48,7 +45,6 @@ public class BeneficiaryController {
     }
 
 
-    /*--------------------------------------------   View All Beneficiary Mapping -------------------------------------------------*/
     @GetMapping("/viewall")
     public ResponseEntity<List<Beneficiary>> getAllBeneneficiaryMapping(@RequestParam String key) throws BeneficiaryException, CustomerException{
 
@@ -57,7 +53,7 @@ public class BeneficiaryController {
     }
 
 
-    /*--------------------------------------------   Delete Beneficiary Mapping -------------------------------------------------*/
+
     @DeleteMapping("/delete")
     public ResponseEntity<Beneficiary> deleteBeneneficiaryMapping(@Valid @RequestBody BeneficiaryDTO beneficiary , @RequestParam String key) throws BeneficiaryException, CustomerException{
 

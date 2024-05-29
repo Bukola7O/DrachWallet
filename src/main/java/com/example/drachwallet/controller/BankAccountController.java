@@ -23,7 +23,6 @@ public class BankAccountController {
     private BankAccountService bankAccountService;
 
 
-    /*---------------------------------------   Add Bank Account Mapping -------------------------------------------*/
     @PostMapping("/add")
     public ResponseEntity<String> addAccountMapping(@RequestParam String key,@Valid @RequestBody BankAccountDTO bankAccountDTO) throws BankAccountException, CustomerException{
 
@@ -34,15 +33,12 @@ public class BankAccountController {
     }
 
 
-    /*---------------------------------------   Delete Bank Account Mapping -------------------------------------------*/
     @DeleteMapping("/delete")
     public ResponseEntity<Wallet> removeAccountMapping(@RequestParam String key,@Valid @RequestBody BankAccountDTO bankAccount) throws BankAccountException, CustomerException{
 
         return new ResponseEntity<>(bankAccountService.removeBankAccount(key, bankAccount),HttpStatus.OK);
     }
 
-
-    /*---------------------------------------   View Bank Account Mapping -------------------------------------------*/
     @GetMapping("/details")
     public ResponseEntity<Optional<BankAccount>> getBankAccountDetailsMapping(@RequestParam String key, @RequestParam Integer accountNo) throws BankAccountException, CustomerException{
 
@@ -51,7 +47,6 @@ public class BankAccountController {
     }
 
 
-    /*---------------------------------------   View All Bank Account Mapping -------------------------------------------*/
     @GetMapping("/all")
     public ResponseEntity<List<BankAccount>> getAllBankAccountMapping(@RequestParam String key) throws BankAccountException, CustomerException{
 
